@@ -1,4 +1,3 @@
-تفضل يا غالي الكود الكامل للموقع في ملف واحد (index.html). يمكنك نسخ الكود وحفظه باسم index.html وتوضيعه في نفس الفولدر اللي فيه الصور والأغنية (IMG_4056.jpeg, IMG_4057.jpeg, IMG_4058.jpeg, IMG_4059.jpeg, song.mp3) ورفعه على GitHub مباشرة!
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -14,8 +13,8 @@
             --primary: #ff4b72;
             --primary-glow: rgba(255, 75, 114, 0.6);
             --secondary: #ff758c;
-            --bg-dark: #0f051d;
-            --card-bg: rgba(255, 255, 255, 0.07);
+            --bg-dark: #0d041a;
+            --card-bg: rgba(255, 255, 255, 0.06);
             --gold: #ffd700;
         }
 
@@ -38,23 +37,14 @@
             position: relative;
         }
 
-        /* Particles Background */
-        #particles-js {
+        .floating-heart {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            color: var(--primary);
+            opacity: 0.5;
+            animation: floatUp 8s linear infinite;
+            font-size: 1rem;
             pointer-events: none;
             z-index: 1;
-        }
-
-        .floating-heart {
-            position: absolute;
-            color: var(--primary);
-            opacity: 0.6;
-            animation: floatUp 8s linear infinite;
-            font-size: 1.2rem;
         }
 
         @keyframes floatUp {
@@ -63,48 +53,48 @@
             100% { transform: translateY(-10vh) scale(1.2) rotate(360deg); opacity: 0; }
         }
 
-        /* Lock Screen Modal */
+        /* Lock Screen */
         #lock-screen {
             position: fixed;
             inset: 0;
-            background: rgba(15, 5, 29, 0.95);
+            background: rgba(13, 4, 26, 0.96);
             backdrop-filter: blur(20px);
             z-index: 1000;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+            transition: all 0.8s ease;
         }
 
         .lock-card {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 2.5rem;
-            border-radius: 25px;
+            padding: 2rem;
+            border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 30px rgba(255, 75, 114, 0.2);
             text-align: center;
-            max-width: 380px;
-            width: 90%;
+            max-width: 320px;
+            width: 88%;
         }
 
         .lock-icon {
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             filter: drop-shadow(0 0 10px var(--primary));
             animation: pulse 2s infinite;
         }
 
         .password-input {
             width: 100%;
-            padding: 12px;
-            margin: 1.5rem 0;
+            padding: 10px;
+            margin: 1.2rem 0;
             border-radius: 12px;
             border: 2px solid rgba(255, 255, 255, 0.2);
             background: rgba(0, 0, 0, 0.3);
             color: #fff;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-align: center;
             letter-spacing: 4px;
             outline: none;
@@ -120,41 +110,42 @@
             background: linear-gradient(45deg, var(--primary), #ff2a55);
             color: white;
             border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1.1rem;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(255, 75, 114, 0.4);
             transition: 0.3s;
+            width: 100%;
         }
 
         .unlock-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(255, 75, 114, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 75, 114, 0.6);
         }
 
         .error-msg {
             color: #ff4d4d;
-            font-size: 0.9rem;
-            margin-top: 10px;
-            min-height: 20px;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            min-height: 18px;
         }
 
         /* Audio Control Bar */
         .audio-bar {
             position: fixed;
-            top: 20px;
-            left: 20px;
+            top: 15px;
+            left: 15px;
             z-index: 100;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 8px 15px;
-            border-radius: 30px;
+            padding: 6px 12px;
+            border-radius: 25px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
@@ -162,28 +153,27 @@
             background: var(--primary);
             border: none;
             color: white;
-            width: 38px;
-            height: 38px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: 0.3s;
+            font-size: 0.85rem;
         }
 
-        .music-btn:hover { transform: scale(1.1); }
-
-        /* Main Container */
+        /* Main Container - Compact & Narrower */
         .container {
-            max-width: 1000px;
+            max-width: 680px; /* مقاس أصغر وملموم للموقع */
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 30px 15px;
             position: relative;
             z-index: 2;
             opacity: 0;
             transform: translateY(20px);
-            transition: all 1s ease 0.5s;
+            transition: all 1s ease 0.3s;
         }
 
         .container.active {
@@ -194,17 +184,17 @@
         /* Header Title */
         .main-header {
             text-align: center;
-            margin-top: 20px;
-            margin-bottom: 50px;
+            margin-top: 25px;
+            margin-bottom: 35px;
         }
 
         .pulse-title {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             font-weight: 900;
             background: linear-gradient(45deg, #fff, #ff85a2, var(--primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px var(--primary-glow);
+            text-shadow: 0 0 15px var(--primary-glow);
             animation: heartPulse 1.8s infinite alternate ease-in-out;
             display: inline-block;
             line-height: 1.4;
@@ -212,67 +202,86 @@
 
         @keyframes heartPulse {
             0% { transform: scale(1); filter: drop-shadow(0 0 5px var(--primary)); }
-            100% { transform: scale(1.08); filter: drop-shadow(0 0 25px var(--primary)); }
+            100% { transform: scale(1.06); filter: drop-shadow(0 0 20px var(--primary)); }
         }
 
-        /* Photo Gallery */
         .section-title {
             text-align: center;
-            font-size: 1.8rem;
-            margin: 40px 0 20px;
+            font-size: 1.3rem;
+            margin: 30px 0 15px;
             color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 60px;
-        }
-
-        .photo-card {
+        /* Single Frame Slider Gallery */
+        .single-frame-gallery {
             position: relative;
+            width: 100%;
+            max-width: 420px;
+            height: 380px;
+            margin: 0 auto 40px;
             border-radius: 20px;
             overflow: hidden;
-            height: 280px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
-            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 20px rgba(255, 75, 114, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
-        .photo-card img {
+        .slide-img {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            transform: scale(1.05);
         }
 
-        .photo-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: var(--primary);
-            box-shadow: 0 15px 30px var(--primary-glow);
+        .slide-img.active {
+            opacity: 1;
+            transform: scale(1);
         }
 
-        .photo-card:hover img {
-            transform: scale(1.1);
+        /* Slider Indicators */
+        .slider-dots {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 5;
         }
 
-        /* Interactive Flip Cards */
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: var(--primary);
+            width: 20px;
+            border-radius: 10px;
+        }
+
+        /* Interactive Cards Grid - 2 Per Row */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(2, 1fr); /* كرتين جنب بعض دائماً */
+            gap: 15px;
+            margin-bottom: 40px;
             perspective: 1000px;
         }
 
         .flip-card {
-            height: 240px;
+            height: 170px;
             cursor: pointer;
         }
 
@@ -281,7 +290,7 @@
             width: 100%;
             height: 100%;
             text-align: center;
-            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             transform-style: preserve-3d;
         }
 
@@ -295,46 +304,46 @@
             height: 100%;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-            border-radius: 20px;
-            padding: 20px;
+            border-radius: 16px;
+            padding: 12px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
         .flip-card-front {
-            background: linear-gradient(135deg, rgba(255, 75, 114, 0.2), rgba(255, 255, 255, 0.05));
+            background: linear-gradient(135deg, rgba(255, 75, 114, 0.18), rgba(255, 255, 255, 0.04));
             backdrop-filter: blur(10px);
         }
 
         .flip-card-front i {
-            font-size: 3rem;
+            font-size: 2rem;
             color: var(--primary);
-            margin-bottom: 15px;
-            transition: 0.3s;
+            margin-bottom: 8px;
         }
 
         .flip-card-front span {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
         }
 
         .flip-card-back {
             background: linear-gradient(135deg, var(--primary), #a81c51);
             color: white;
             transform: rotateY(180deg);
-            font-size: 1.1rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            line-height: 1.6;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.5;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
 
         /* Secret Letter Box */
         .letter-container {
-            margin-top: 50px;
+            margin-top: 30px;
             display: flex;
             justify-content: center;
         }
@@ -342,26 +351,25 @@
         .letter-box {
             background: rgba(255, 255, 255, 0.03);
             border: 2px dashed var(--gold);
-            border-radius: 25px;
-            padding: 30px;
-            max-width: 700px;
+            border-radius: 20px;
+            padding: 22px 18px;
             width: 100%;
             text-align: center;
             position: relative;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
             cursor: pointer;
-            transition: 0.4s;
+            transition: 0.3s;
         }
 
         .letter-box:hover {
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
             border-style: solid;
         }
 
         .letter-seal {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--gold);
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
 
         .letter-hint {
@@ -373,13 +381,13 @@
         .letter-content {
             display: none;
             font-family: 'Amiri', serif;
-            font-size: 1.4rem;
-            line-height: 2;
+            font-size: 1.25rem;
+            line-height: 1.9;
             color: #f8f9fa;
             text-align: right;
-            margin-top: 20px;
+            margin-top: 15px;
             border-top: 1px solid rgba(255, 215, 0, 0.3);
-            padding-top: 20px;
+            padding-top: 15px;
         }
 
         .typing-text {
@@ -394,34 +402,35 @@
         }
 
         .final-pulse-text {
-            margin-top: 25px;
+            margin-top: 20px;
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 900;
             color: #ff4b72;
             display: none;
             animation: heartPulse 1.5s infinite alternate ease-in-out;
         }
 
-        @media (max-width: 600px) {
-            .pulse-title { font-size: 1.7rem; }
-            .section-title { font-size: 1.4rem; }
-            .letter-content { font-size: 1.2rem; }
-            .final-pulse-text { font-size: 1.5rem; }
+        @media (max-width: 480px) {
+            .pulse-title { font-size: 1.4rem; }
+            .section-title { font-size: 1.15rem; }
+            .single-frame-gallery { height: 320px; }
+            .flip-card { height: 155px; }
+            .flip-card-back { font-size: 0.78rem; }
+            .letter-hint { font-size: 0.98rem; }
+            .letter-content { font-size: 1.1rem; }
+            .final-pulse-text { font-size: 1.3rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Floating Background Particles -->
-    <div id="particles-js"></div>
-
     <!-- Lock Screen Modal -->
     <div id="lock-screen">
         <div class="lock-card">
             <i class="fa-solid fa-heart-lock lock-icon"></i>
-            <h2 style="font-size: 1.5rem; margin-bottom: 5px;">موقع جني ❣️</h2>
-            <p style="color: #aaa; font-size: 0.9rem;">ادخلي كلمة السر للفتح</p>
+            <h2 style="font-size: 1.3rem; margin-bottom: 4px;">موقع جني ❣️</h2>
+            <p style="color: #aaa; font-size: 0.85rem;">ادخلي كلمة السر للفتح</p>
             
             <input type="password" id="pass-input" class="password-input" placeholder="••••" maxlength="10">
             <button onclick="checkPassword()" class="unlock-btn">فتح الموقع ✨</button>
@@ -434,7 +443,7 @@
         <button class="music-btn" onclick="toggleAudio()">
             <i class="fa-solid fa-music" id="audio-icon"></i>
         </button>
-        <span style="font-size: 0.85rem; font-weight: 600;">أغنيتنا ✨</span>
+        <span style="font-size: 0.8rem; font-weight: 600;">أغنيتنا ✨</span>
         <audio id="bg-audio" loop src="song.mp3"></audio>
     </div>
 
@@ -446,25 +455,24 @@
             <h1 class="pulse-title">بحبكككككككك قد البحررررر ❣️🏡</h1>
         </header>
 
-        <!-- Photo Gallery -->
+        <!-- Photo Gallery - Single Auto Changing Frame -->
         <h2 class="section-title"><i class="fa-regular fa-images"></i> ذكرياتنا الحلوة</h2>
-        <div class="gallery-grid">
-            <div class="photo-card">
-                <img src="IMG_4056.jpeg" alt="جني 1" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80'">
-            </div>
-            <div class="photo-card">
-                <img src="IMG_4057.jpeg" alt="جني 2" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80'">
-            </div>
-            <div class="photo-card">
-                <img src="IMG_4058.jpeg" alt="جني 3" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80'">
-            </div>
-            <div class="photo-card">
-                <img src="IMG_4059.jpeg" alt="جني 4" onerror="this.src='https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=600&q=80'">
+        <div class="single-frame-gallery">
+            <img src="IMG_4056.jpeg" class="slide-img active" alt="جني 1" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80'">
+            <img src="IMG_4057.jpeg" class="slide-img" alt="جني 2" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80'">
+            <img src="IMG_4058.jpeg" class="slide-img" alt="جني 3" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80'">
+            <img src="IMG_4059.jpeg" class="slide-img" alt="جني 4" onerror="this.src='https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=600&q=80'">
+            
+            <div class="slider-dots" id="slider-dots">
+                <span class="dot active" onclick="setSlide(0)"></span>
+                <span class="dot" onclick="setSlide(1)"></span>
+                <span class="dot" onclick="setSlide(2)"></span>
+                <span class="dot" onclick="setSlide(3)"></span>
             </div>
         </div>
 
-        <!-- Flip Cards -->
-        <h2 class="section-title"><i class="fa-solid fa-envelope-open-text"></i> اضغطي على الكروت لارسال المشاعر</h2>
+        <!-- Flip Cards - 2 Grid Row -->
+        <h2 class="section-title"><i class="fa-solid fa-envelope-open-text"></i> اضغطي على الكروت</h2>
         <div class="cards-grid">
             <!-- Card 1 -->
             <div class="flip-card" onclick="flipCard(this)">
@@ -487,7 +495,7 @@
                         <span>الكارت الثاني</span>
                     </div>
                     <div class="flip-card-back">
-                        بحبكككككقد الدنيا💕
+                        بحبككككك قد الدنيا💕
                     </div>
                 </div>
             </div>
@@ -520,11 +528,11 @@
         </div>
 
         <!-- Secret Letter -->
-        <h2 class="section-title"><i class="fa-solid fa-box-archive"></i> رسالة خاصة جداً</h2>
+        <h2 class="section-title"><i class="fa-solid fa-box-archive"></i> رسالة خاصة</h2>
         <div class="letter-container">
             <div class="letter-box" id="letter-box" onclick="openLetter()">
                 <div class="letter-seal"><i class="fa-solid fa-envelope"></i></div>
-                <div class="letter-hint" id="letter-hint">اضغطي هنا لفتح الرسالة الخاصة 💌</div>
+                <div class="letter-hint" id="letter-hint">دوسي هنا ي روح قلبي 💌</div>
                 
                 <div class="letter-content" id="letter-content">
                     <span id="typing-span" class="typing-text"></span>
@@ -538,7 +546,7 @@
     </div>
 
     <script>
-        // Password Check Functionality
+        // Check Password
         function checkPassword() {
             const passInput = document.getElementById('pass-input').value;
             const errorMsg = document.getElementById('error-msg');
@@ -554,13 +562,11 @@
                     mainContent.classList.add('active');
                 }, 800);
 
-                // Play Audio
                 audio.play().catch(e => console.log("Autoplay blocked:", e));
 
-                // Confetti Explosion
                 confetti({
-                    particleCount: 100,
-                    spread: 70,
+                    particleCount: 80,
+                    spread: 60,
                     origin: { y: 0.6 }
                 });
             } else {
@@ -569,11 +575,8 @@
             }
         }
 
-        // Enter key to unlock
         document.getElementById('pass-input').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                checkPassword();
-            }
+            if (e.key === 'Enter') checkPassword();
         });
 
         // Toggle Audio
@@ -589,17 +592,35 @@
             }
         }
 
+        // Auto Image Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide-img');
+        const dots = document.querySelectorAll('.dot');
+
+        function setSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        setInterval(() => {
+            let nextSlide = (currentSlide + 1) % slides.length;
+            setSlide(nextSlide);
+        }, 3000);
+
         // Flip Card
         function flipCard(card) {
             card.classList.toggle('flipped');
             confetti({
                 particleCount: 15,
-                spread: 50,
+                spread: 40,
                 origin: { y: 0.7 }
             });
         }
 
-        // Typewriter Letter Animation
+        // Typewriter Letter
         let letterOpened = false;
         const letterText = `عارف ان انا اخر فتره مقصر معاكي اوي بس حقكك عليا ونا هعوضك والله يحبيبتي ومتزعليش مني واحب اعرفككك اني بحبكككك اوي اوي اوي اوييييي وربنا وخلاص انا اتلزقت فيكي ومش هسيبككك`;
 
@@ -619,12 +640,12 @@
                 if (index < letterText.length) {
                     typingSpan.textContent += letterText.charAt(index);
                     index++;
-                    setTimeout(typeWriter, 50);
+                    setTimeout(typeWriter, 45);
                 } else {
                     document.getElementById('final-pulse').style.display = 'block';
                     confetti({
-                        particleCount: 80,
-                        spread: 100,
+                        particleCount: 70,
+                        spread: 80,
                         origin: { y: 0.8 }
                     });
                 }
@@ -633,15 +654,15 @@
             typeWriter();
         }
 
-        // Create Floating Background Hearts
+        // Background Hearts
         function createFloatingHearts() {
             const container = document.body;
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 15; i++) {
                 const heart = document.createElement('i');
                 heart.className = 'fa-solid fa-heart floating-heart';
                 heart.style.left = Math.random() * 100 + 'vw';
                 heart.style.animationDelay = Math.random() * 5 + 's';
-                heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
+                heart.style.fontSize = (Math.random() * 12 + 8) + 'px';
                 container.appendChild(heart);
             }
         }
@@ -650,4 +671,3 @@
     </script>
 </body>
 </html>
-
